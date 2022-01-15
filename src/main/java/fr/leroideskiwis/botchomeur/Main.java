@@ -17,7 +17,7 @@ public class Main {
     public Main(String token) throws LoginException {
         this.jda = JDABuilder.createDefault(token).build();
         commandManager.addCommand("shitpost", new ShitPostCommand());
-
+        commandManager.addCommand("suggest", new SuggestCommand());
         jda.addEventListener(new CommandEvent(commandManager));
     }
 

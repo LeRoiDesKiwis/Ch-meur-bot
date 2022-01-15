@@ -34,6 +34,8 @@ public class CommandManager {
             String[] args = getArgs(split);
             String commandName = split[0];
 
+            if(!commands.containsKey(commandName)) return;
+
             CommandExecutor commandExecutor = commands.get(commandName);
             if(!commandExecutor.hasPermission(event.getGuild(), event.getMember())) {
                 MessageHandler.sendError(event.getTextChannel(), "Vous n'avez pas la permission d'exécuter cette commande !");
